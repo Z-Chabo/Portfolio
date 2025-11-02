@@ -59,12 +59,12 @@ export const NavBar = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden container mx-auto px-4 py-2">
+      <div className="md:hidden container mx-auto px-4 py-1">
         {/* Mobile Title */}
-        <div className="text-center mb-4">
+        <div className="text-center mb-2">
           <a
             href="#hero"
-            className="text-lg font-bold text-foreground hover:text-primary transition-colors"
+            className="text-base font-bold text-foreground hover:text-primary transition-colors"
             style={{ color: "inherit" }}
           >
             <span className="text-glow">Zeidan Chabo </span>
@@ -72,19 +72,18 @@ export const NavBar = () => {
           </a>
         </div>
 
-        {/* Mobile Navigation - Vertical */}
-        <ul className="flex flex-col space-y-2 items-center">
+        {/* Mobile Navigation - Horizontal Grid */}
+        <div className="grid grid-cols-3 gap-1 justify-items-center">
           {NavItems.map((item) => (
-            <li key={item.name}>
-              <a
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium py-1 px-3 rounded-md hover:bg-background/50"
-              >
-                {item.name}
-              </a>
-            </li>
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-xs text-foreground hover:text-primary transition-colors duration-200 font-medium py-1 px-2 rounded hover:bg-background/50 text-center"
+            >
+              {item.name}
+            </a>
           ))}
-        </ul>
+        </div>
       </div>
     </nav>
   );
