@@ -1,0 +1,16 @@
+{
+  "buildCommand": "cd portfolio && npm run build",
+  "outputDirectory": "portfolio/dist",
+  "installCommand": "cd portfolio && npm install",
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        }
+      ]
+    }
+  ]
+}
