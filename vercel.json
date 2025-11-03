@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd portfolio && npm run build",
-  "outputDirectory": "portfolio/dist",
-  "installCommand": "cd portfolio && npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
   "headers": [
     {
       "source": "/sitemap.xml",
