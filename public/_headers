@@ -1,28 +1,52 @@
-/\*
-X-Content-Type-Options: nosniff
+/\*/\*
+
+X-Content-Type-Options: nosniffX-Content-Type-Options: nosniff
+
+X-Frame-Options: DENY
+
+X-XSS-Protection: 1; mode=block/\*.js
+
+Content-Type: application/javascript
 
 /\*.js
+
+Content-Type: application/javascript; charset=utf-8/\*.mjs
+
 Content-Type: application/javascript
 
 /\*.mjs
+
+Content-Type: application/javascript; charset=utf-8/\*.jsx
+
 Content-Type: application/javascript
 
-/\*.jsx
-Content-Type: application/javascript
+/\*.css
 
-/\*.ts
-Content-Type: application/javascript
+Content-Type: text/css; charset=utf-8/\*.ts
 
-/\*.tsx
 Content-Type: application/javascript
 
 /assets/\*.js
+
+Content-Type: application/javascript; charset=utf-8/\*.tsx
+
 Content-Type: application/javascript
 
 /assets/\*.css
+
+Content-Type: text/css; charset=utf-8/assets/\*.js
+
+Content-Type: application/javascript
+
+/sitemap.xml
+
+Content-Type: application/xml; charset=utf-8/assets/\*.css
+
 Content-Type: text/css
 
-```
+/robots.txt
+
+Content-Type: text/plain; charset=utf-8```
 
 **2. Check if the `_headers` file is in the build output:**
 
@@ -35,6 +59,8 @@ After running `npm run build`, check if `_headers` exists in your `dist` or `bui
 **3. Alternative: Create `public/_redirects` file:**
 
 Sometimes Cloudflare needs both. Create `public/_redirects`:
+
 ```
 
 /\* /index.html 200
+```
