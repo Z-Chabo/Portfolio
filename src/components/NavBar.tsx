@@ -64,11 +64,11 @@ export const NavBar = () => {
             href="https://github.com/Z-Chabo"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors font-medium"
+            className="flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 font-semibold shadow-md"
             aria-label="Checkout my GitHub profile and projects"
           >
             <Github className="w-5 h-5" />
-            <span>GitHub</span>
+            <span>View My GitHub</span>
           </a>
         </div>
       </div>
@@ -106,11 +106,11 @@ export const NavBar = () => {
             href="https://github.com/Z-Chabo"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-1.5 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors text-xs font-medium"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all text-sm font-semibold shadow-md"
             aria-label="Visit my GitHub profile"
           >
             <Github className="w-4 h-4" />
-            <span>GitHub</span>
+            <span>View My GitHub</span>
           </a>
         </div>
       </div>
