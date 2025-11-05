@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Github } from "lucide-react";
 
 const NavItems = [
   { name: "Home", href: "#hero" },
@@ -44,18 +45,32 @@ export const NavBar = () => {
         </a>
 
         {/* Desktop Navigation - Horizontal */}
-        <ul className="flex space-x-6">
-          {NavItems.map((item) => (
-            <li key={item.name}>
-              <a
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center space-x-6">
+          <ul className="flex space-x-6">
+            {NavItems.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* GitHub Link */}
+          <a
+            href="https://github.com/Z-Chabo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors font-medium"
+            aria-label="Checkout my GitHub profile and projects"
+          >
+            <Github className="w-5 h-5" />
+            <span>GitHub</span>
+          </a>
+        </div>
       </div>
 
       {/* Mobile Layout */}
@@ -73,7 +88,7 @@ export const NavBar = () => {
         </div>
 
         {/* Mobile Navigation - Horizontal Grid */}
-        <div className="grid grid-cols-3 gap-1 justify-items-center">
+        <div className="grid grid-cols-3 gap-1 justify-items-center mb-2">
           {NavItems.map((item) => (
             <a
               key={item.name}
@@ -83,6 +98,20 @@ export const NavBar = () => {
               {item.name}
             </a>
           ))}
+        </div>
+
+        {/* GitHub Link - Mobile */}
+        <div className="flex justify-center">
+          <a
+            href="https://github.com/Z-Chabo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-1.5 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors text-xs font-medium"
+            aria-label="Visit my GitHub profile"
+          >
+            <Github className="w-4 h-4" />
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
     </nav>
