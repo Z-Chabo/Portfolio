@@ -81,9 +81,8 @@ export const AboutSection = () => {
                 what's possible.
               </p>
               <p>
-                My approach combines technical excellence with creative
-                problem-solving, always keeping the end user experience at the
-                forefront of development decisions.
+                My approach to software development always prioritizes the end
+                user experience.
               </p>
             </div>
           </div>
