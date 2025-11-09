@@ -72,7 +72,7 @@ export const ExperienceSection = () => {
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>
-                          Implemented APIs for Genetec website in web templates
+                        Implemented APIs for Genetec website in web templates
                           with testing through local (Mocker servers with fake
                           data), dev, QA, UAT environments before production
                           deployment with CRM-integrated APIs
@@ -88,7 +88,7 @@ export const ExperienceSection = () => {
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>
-                          Managed pull requests through Microsoft platforms with
+                        Managed pull requests through Microsoft platforms with
                           colleague code reviews in professional environment
                         </span>
                       </li>
