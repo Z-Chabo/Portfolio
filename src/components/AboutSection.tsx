@@ -10,8 +10,8 @@ export const AboutSection = () => {
             About <span className="text-primary">Me</span>
           </h2>
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-            full-stack developer with hands-on industry experience and a love
-            for creating innovations that make a difference.
+            software developer with hands-on industry experience and a love for
+            creating innovations that make a difference.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export const AboutSection = () => {
               <p>
                 I'm a{" "}
                 <span className="text-primary font-semibold">
-                  Full Stack Developer
+                  Software Developer
                 </span>{" "}
                 that loves building modern, user-friendly applications. My
                 journey in software development has been driven by curiosity and

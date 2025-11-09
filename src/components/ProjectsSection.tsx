@@ -12,112 +12,113 @@ const projects: Project[] = [
     id: 1,
     title: "Cuisine Recipes App",
     description:
-      "A full-featured recipe application where users can browse, search, and save their favorite recipes with detailed cooking instructions.",
-    technologies: ["React", "JavaScript", "CSS", "API Integration"],
+      "React-based recipe search application with API integration, allowing users to browse recipes and view detailed cooking instructions and ingredients.",
+    technologies: ["React", "JavaScript", "Vite", "CSS Modules"],
     category: "Web Application",
     features: [
-      "Recipe Search",
-      "Save Favorites",
-      "Cooking Instructions",
+      "Recipe Search API",
+      "Detailed Food Information",
       "Ingredient Lists",
+      "LocalStorage Caching",
     ],
   },
   {
     id: 2,
     title: "Student Management System",
     description:
-      "Complete system for managing student records, grades, and academic information with admin dashboard and reporting features.",
-    technologies: ["React", "Node.js", "Database", "Authentication"],
-    category: "Full Stack",
+      "Java-based student information system for managing student records, GPA tracking, course enrollment, and academic year progression.",
+    technologies: ["Java", "OOP", "Data Structures"],
+    category: "Desktop Application",
     features: [
-      "Student Records",
-      "Grade Management",
-      "Admin Dashboard",
-      "Reports",
+      "Student Records Management",
+      "GPA Calculation",
+      "Course Tracking",
+      "Credit Management",
     ],
   },
   {
     id: 3,
     title: "Email Application",
     description:
-      "Modern email client with compose, inbox management, and real-time notifications. Clean UI with advanced filtering options.",
-    technologies: ["React", "TypeScript", "Real-time Updates", "UI/UX"],
-    category: "Web Application",
+      "Java console application for generating company email addresses with department selection and custom mailbox capacity.",
+    technologies: ["Java", "Scanner", "OOP"],
+    category: "Console Application",
     features: [
-      "Compose Emails",
-      "Inbox Management",
-      "Real-time Notifications",
-      "Advanced Filtering",
+      "Email Generation",
+      "Department Selection",
+      "Mailbox Capacity",
+      "Password Management",
     ],
   },
   {
     id: 4,
     title: "Pacman Game",
     description:
-      "Classic Pacman game recreation with smooth animations, score tracking, and multiple levels. Built with vanilla JavaScript.",
-    technologies: ["JavaScript", "HTML5 Canvas", "CSS", "Game Logic"],
+      "Classic Pacman game recreation using Java Swing with collision detection, ghost AI, and scoring system.",
+    technologies: ["Java", "Swing", "AWT", "Game Logic"],
     category: "Game Development",
     features: [
       "Classic Gameplay",
+      "Collision Detection",
+      "Ghost Animations",
+      "Pacman Animation",
       "Score Tracking",
-      "Multiple Levels",
-      "Smooth Animations",
     ],
   },
   {
     id: 5,
     title: "ToDo List App",
     description:
-      "Productive task management application with drag-and-drop functionality, categories, and progress tracking.",
-    technologies: ["React", "Local Storage", "CSS", "JavaScript"],
+      "React-based task management application with add, delete, and complete functionality for organizing daily tasks.",
+    technologies: ["React", "JavaScript", "Vite", "CSS Modules"],
     category: "Productivity",
     features: [
       "Task Management",
-      "Drag & Drop",
-      "Categories",
-      "Progress Tracking",
+      "Add/Delete Tasks",
+      "Task Completion",
+      "Responsive Design",
     ],
   },
   {
     id: 6,
     title: "Random Password Generator",
     description:
-      "Secure password generator with customizable length, character sets, and strength indicators for enhanced security.",
-    technologies: ["JavaScript", "HTML", "CSS", "Security"],
+      "JavaScript utility for generating secure random passwords with customizable options for length and character types.",
+    technologies: ["JavaScript", "Random Generation", "Security"],
     category: "Utility",
     features: [
       "Customizable Length",
-      "Character Sets",
-      "Strength Indicator",
-      "Copy to Clipboard",
+      "Character Set Options",
+      "Lowercase/Uppercase",
+      "Numbers & Symbols",
     ],
   },
   {
     id: 7,
     title: "Mario Club Website",
     description:
-      "Fan website dedicated to Mario games with game information, character profiles, and community features.",
-    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      "Static fan website for Mario games featuring responsive design, navigation menu, and image gallery.",
+    technologies: ["HTML", "CSS", "Responsive Design"],
     category: "Website",
     features: [
-      "Game Information",
-      "Character Profiles",
-      "Responsive Design",
-      "Community Features",
+      "Welcome Banner",
+      "Navigation Menu",
+      "Image Gallery",
+      "Email Form",
     ],
   },
   {
     id: 8,
     title: "Dice Rolling Website",
     description:
-      "Interactive dice rolling application for board games and RPGs with multiple dice types and roll history.",
-    technologies: ["JavaScript", "HTML", "CSS", "Animations"],
-    category: "Game Utility",
+      "Simple interactive dice rolling application that lets users roll multiple dice with dynamic image display.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    category: "Web Utility",
     features: [
-      "Multiple Dice Types",
-      "Roll History",
-      "Animations",
-      "Game Support",
+      "Multiple Dice Rolling",
+      "Dynamic Image Display",
+      "User Input",
+      "Random Generation",
     ],
   },
 ];
@@ -132,7 +133,7 @@ export const ProjectsSection = () => {
             My <span className="text-primary">Projects</span>
           </h2>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Here are some of the projects I've built, showcasing my skills in
+            Here are some of the projects I've built, showing my skills in
             web development, game development, and creative problem-solving.
           </p>
         </div>

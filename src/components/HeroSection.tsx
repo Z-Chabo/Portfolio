@@ -13,7 +13,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-foreground/80 mb-4">
-            Full Stack Developer
+            Software Developer
           </p>
           <p className="text-lg text-foreground/80 mb-8 font-medium">
             Scroll down to know me!
