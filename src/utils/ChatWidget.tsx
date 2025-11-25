@@ -43,7 +43,9 @@ export const ChatWidget = () => {
     setInput("");
 
     try {
-      const res = await fetch("http://localhost:8000/aiAgent", {
+      // Use the environment variable for the API base URL
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+      const res = await fetch(`${apiBaseUrl}/aiAgent`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
