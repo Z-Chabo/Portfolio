@@ -8,6 +8,7 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
+import { ChatWidget } from "@/utils/ChatWidget";
 
 export const Home = () => {
   const darkMode = useDarkMode();
@@ -23,6 +24,7 @@ export const Home = () => {
         <ExperienceSection />
         <ProjectsSection />
         <ContactSection />
+        <ChatWidget/>
       </main>
     </div>
   );
