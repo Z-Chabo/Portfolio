@@ -109,6 +109,13 @@ export const ChatWidget = () => {
               {msg.content}
             </p>
           ))}
+          {isLoading && (
+            <div className="chat-message ai loading">
+              <span className="typing-dot"></span>
+              <span className="typing-dot"></span>
+              <span className="typing-dot"></span>
+            </div>
+          )}
         </div>
 
         <div className="chat-input-section">
