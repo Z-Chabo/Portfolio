@@ -10,38 +10,18 @@ interface Message {
 export const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: "ai-initial",
+      content:
+        "Hi, I'm Z-Bot, Zeidan's personal AI assistant. I can answer questions about him. What would you like to know?",
+      type: "ai",
+    },
+  ]);
   const [isLoading, setIsLoading] = useState(false);
 
   // a reference to the div that contains all messages between user and ai
   const chatBodyRef = useRef<HTMLDivElement>(null);
-
-  // Fetch the AI introduction on mount
-  useEffect(() => {
-    const fetchIntroduction = async () => {
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
-      try {
-        const response = await fetch(`${apiBaseUrl}/introduce`);
-        if (!response.ok) throw new Error("Failed to fetch introduction");
-
-        const introContent = await response.text();
-        setMessages([{ id: "ai-initial", content: introContent, type: "ai" }]);
-      } catch (err) {
-        console.error("Error fetching introduction:", err);
-        // Fallback to static message if fetch fails
-        setMessages([
-          {
-            id: "ai-initial",
-            content:
-              "Hi, I'm Z-Bot, Zeidan's personal AI assistant. I can answer questions about him. What would you like to know?",
-            type: "ai",
-          },
-        ]);
-      }
-    };
-
-    fetchIntroduction();
-  }, []);
 
   useEffect(() => {
     // Scroll to the bottom of the chat body when messages change
