@@ -24,29 +24,11 @@ export const ChatWidget = () => {
         const response = await fetch(`${apiBaseUrl}/introduce`);
         if (!response.ok) throw new Error("Failed to fetch introduction");
 
-        const reader = response.body?.getReader();
-        if (!reader) return;
-
-        const decoder = new TextDecoder();
-        let introContent = "";
-
-        // Add initial AI message placeholder
-        const introMessageId = "ai-initial";
-        setMessages([{ id: introMessageId, content: "", type: "ai" }]);
-
-        // Stream the introduction
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          introContent += decoder.decode(value, { stream: true });
-          setMessages([
-            { id: introMessageId, content: introContent, type: "ai" },
-          ]);
-        }
+        const introContent = await response.text();
+        setMessages([{ id: "ai-initial", content: introContent, type: "ai" }]);
       } catch (err) {
         console.error("Error fetching introduction:", err);
-        // Fallback to static message if streaming fails
+        // Fallback to static message if fetch fails
         setMessages([
           {
             id: "ai-initial",
