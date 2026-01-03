@@ -10,16 +10,56 @@ interface Message {
 export const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "ai-initial",
-      content:
-        "Hi, I'm Z-Bot, Zeidan's personal AI assistant. I can answer questions about him. What would you like to know?",
-      type: "ai",
-    },
-  ]);
-  // a referenc to the div that contains all messages between user and ai
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // a reference to the div that contains all messages between user and ai
   const chatBodyRef = useRef<HTMLDivElement>(null);
+
+  // Fetch the AI introduction on mount
+  useEffect(() => {
+    const fetchIntroduction = async () => {
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+      try {
+        const response = await fetch(`${apiBaseUrl}/introduce`);
+        if (!response.ok) throw new Error("Failed to fetch introduction");
+
+        const reader = response.body?.getReader();
+        if (!reader) return;
+
+        const decoder = new TextDecoder();
+        let introContent = "";
+
+        // Add initial AI message placeholder
+        const introMessageId = "ai-initial";
+        setMessages([{ id: introMessageId, content: "", type: "ai" }]);
+
+        // Stream the introduction
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          introContent += decoder.decode(value, { stream: true });
+          setMessages([
+            { id: introMessageId, content: introContent, type: "ai" },
+          ]);
+        }
+      } catch (err) {
+        console.error("Error fetching introduction:", err);
+        // Fallback to static message if streaming fails
+        setMessages([
+          {
+            id: "ai-initial",
+            content:
+              "Hi, I'm Z-Bot, Zeidan's personal AI assistant. I can answer questions about him. What would you like to know?",
+            type: "ai",
+          },
+        ]);
+      }
+    };
+
+    fetchIntroduction();
+  }, []);
 
   useEffect(() => {
     // Scroll to the bottom of the chat body when messages change
@@ -31,7 +71,7 @@ export const ChatWidget = () => {
   const toggleChat = () => setIsOpen(!isOpen);
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() || isLoading) return;
 
     // Add user message to history
     const userMessage: Message = {
@@ -41,6 +81,7 @@ export const ChatWidget = () => {
     };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    setIsLoading(true);
 
     try {
       // Use the environment variable for the API base URL
@@ -72,6 +113,8 @@ export const ChatWidget = () => {
         type: "ai",
       };
       setMessages((prevMessages) => [...prevMessages, errorMessage]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
